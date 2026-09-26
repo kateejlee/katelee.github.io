@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katelyn Lee | BAIT Student Portfolio</title>
+
+    <style>
+        :root {
+            --navy: #102A43;
+            --dark-navy: #0B1F33;
+            --cream: #F7F1E3;
+            --light-cream: #FBF8F1;
+            --white: #FFFFFF;
+            --text: #263746;
+            --muted: #607080;
+            --border: #E4DED1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--cream);
+        }
+
+        nav {
+            background-color: var(--navy);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(11, 31, 51, 0.18);
+        }
+
+        nav .logo {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 90px 20px;
+            background-color: var(--light-cream);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h2 {
+            font-size: 21px;
+            font-weight: 400;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .rutgers {
+            margin-top: 28px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 650;
+            color: var(--navy);
+            margin-bottom: 45px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 14px rgba(16, 42, 67, 0.06);
+        }
+
+        .skill-card h3 {
+            font-size: 19px;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .skill-card ul {
+            padding-left: 20px;
+        }
+
+        .skill-card li {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 14px rgba(16, 42, 67, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(16, 42, 67, 0.11);
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: var(--text);
+            font-size: 15.5px;
+        }
+
+        .education {
+            background-color: var(--white);
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 14px rgba(16, 42, 67, 0.06);
+        }
+
+        .education h3 {
+            font-size: 21px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .education p {
+            color: var(--muted);
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .skills-container,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Katelyn Lee</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- About / Personal Statement -->
+    <header class="hero" id="about">
+
+        <h1>Katelyn Lee</h1>
+
+        <h2>
+            Business Analytics & Information Technology Student
+        </h2>
+
+        <p>
+            I am a Rutgers Business School student majoring in Business Analytics
+            and Information Technology, aspiring to combine my passion for business,
+            data, and healthcare to improve healthcare operations and organizational
+            decision-making.
+        </p>
+
+        <div class="rutgers">
+            Rutgers Business School | Expected Graduation: 2028
+        </div>
+
+    </header>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Technical & Analytical</h3>
+
+                <ul>
+                    <li>Microsoft Excel</li>
+                    <li>SQL & Database Management</li>
+                    <li>Microsoft PowerPoint</li>
+                </ul>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>Professional Skills</h3>
+
+                <ul>
+                    <li>Problem-Solving</li>
+                    <li>Critical Thinking</li>
+                    <li>Communication</li>
+                    <li>Teamwork & Collaboration</li>
+                    <li>Organizational Skills</li>
+                </ul>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>Career Interests</h3>
+
+                <ul>
+                    <li>Healthcare Administration</li>
+                    <li>Healthcare Data Analytics</li>
+                    <li>Business Process Improvement</li>
+                    <li>Strategic Decision-Making</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>Business Case Presentation</h3>
+
+                <p>
+                    Collaborated with a team to examine a real-world business
+                    challenge, research potential solutions, and curate potential
+                    recommendations. Our team met in person and on Zoom to discuss
+                    different approaches and evaluate potential solutions. We
+                    presented our findings during a presentation for an audience,
+                    which strengthened my skills in collaboration and teamwork,
+                    problem-solving, critical thinking, and communication.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Excel Financial Analysis Project</h3>
+
+                <p>
+                    Utilized Microsoft Excel to organize and examine financial data
+                    for a small business. Developed formulas and calculations to
+                    evaluate revenue, expenses, and profitability, and used the
+                    results to identify trends and support business decision-making.
+                    This project enabled me to work with financial data, use Excel
+                    for analysis, interpret quantitative information, and apply
+                    data-driven strategies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education">
+
+            <h3>Rutgers Business School</h3>
+
+            <p>
+                Bachelor of Science in Business Analytics and Information Technology
+            </p>
+
+            <p>
+                Expected Graduation: 2028
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Katelyn Lee | Rutgers Business School
+        </p>
+
+    </footer>
+
+</body>
+</html>
